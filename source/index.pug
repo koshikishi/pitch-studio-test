@@ -1,0 +1,41 @@
+extends pug/layout
+
+prepend variables
+  -
+    const title = 'Pitch Studio Test';
+    const description = 'The test project for Pitch Studio';
+
+append variables
+  -
+    html.classList.push('no-js');
+
+    meta.push({
+      name: 'theme-color',
+      content: '#ffffff',
+    });
+  //-
+    preloads.push('fonts/font-regular.woff2');
+    links.push({
+      rel: 'icon',
+      href: 'favicon.ico',
+    });
+    links.push({
+      rel: 'icon',
+      href: 'img/favicons/favicon.svg',
+      type: 'image/svg+xml',
+    });
+    links.push({
+      rel: 'apple-touch-icon',
+      href: 'img/favicons/apple.png',
+    });
+      links.push({
+      rel: 'manifest',
+      href: 'manifest.webmanifest',
+    });
+
+block content
+  //- include pug/sprite
+
+  include pug/components/header
+  include pug/pages/main
+  include pug/components/footer

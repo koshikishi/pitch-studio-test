@@ -1,0 +1,99 @@
+include mixins
+
+block variables
+  -
+    const site = {
+      title: title ?? '',
+      description: description ?? '',
+    };
+
+    const breakpoints = {
+      desktop: 1360,
+      tablet: 720,
+    };
+
+    const html = {
+      classList: [],
+      attributes: {
+        lang: 'en',
+      },
+    };
+
+    const body = {
+      classList: [],
+      attributes: {},
+    };
+
+    const meta = [
+      {
+        charset: 'utf-8',
+      },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1',
+      },
+      {
+        name: 'description',
+        content: site.description,
+      },
+    ];
+
+    const preloads = [];
+
+    const styles = [
+      'css/style.min.css',
+    ];
+
+    const links = [];
+
+doctype html
+html(class=html.classList)&attributes(html.attributes)
+  head
+    block head-start
+    block meta
+      each attributes in meta
+        meta&attributes(attributes)
+    title!= site.title
+    block preloads
+      each preload in preloads
+        if typeof preload === 'string'
+          link(rel="preload" href!=preload as="font" type="font/woff2" crossorigin)
+        else
+          link(rel="preload" href!=preload.href as=preload.as || 'font' type=preload.type || 'font/woff2' crossorigin)
+    script.
+      (() => {
+        document.documentElement.classList.remove('no-js');
+
+        checkSupport('webp', 'data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==');
+        checkSupport('avif', 'data:image/avif;base64,AAAAIGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZk1BMUIAAADybWV0YQAAAAAAAAAoaGRscgAAAAAAAAAAcGljdAAAAAAAAAAAAAAAAGxpYmF2aWYAAAAADnBpdG0AAAAAAAEAAAAeaWxvYwAAAABEAAABAAEAAAABAAABGgAAAB0AAAAoaWluZgAAAAAAAQAAABppbmZlAgAAAAABAABhdjAxQ29sb3IAAAAAamlwcnAAAABLaXBjbwAAABRpc3BlAAAAAAAAAAIAAAACAAAAEHBpeGkAAAAAAwgICAAAAAxhdjFDgQ0MAAAAABNjb2xybmNseAACAAIAAYAAAAAXaXBtYQAAAAAAAAABAAEEAQKDBAAAACVtZGF0EgAKCBgANogQEAwgMg8f8D///8WfhwB8+ErK42A=');
+
+        function addClass(cls) {
+          document.documentElement.classList.add(cls);
+        }
+
+        function checkSupport(format, base64) {
+          const image = new Image();
+
+          image.src = base64;
+
+          image.onload = image.onerror = () => {
+            addClass(image.height > 0 ? format : `no-${format}`);
+          };
+        }
+      })();
+    block styles
+      each style in styles
+        if typeof style === 'string'
+          link(rel="stylesheet" href!=style)
+        else
+          link(rel="stylesheet")&attributes(style)
+    block links
+      each attributes in links
+        link&attributes(attributes)
+    block head-end
+
+  body(class=body.classList)&attributes(body.attributes)
+    block body-start
+    block content
+    block scripts
+    block body-end
