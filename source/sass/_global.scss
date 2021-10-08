@@ -3,12 +3,14 @@
   --color-black: #000000;
   --color-gray: #8a94a6;
   --color-gray-light: #e1e6ed;
+  --color-gray-transparent: #{rgba(#e1e6ed, 0.2)};
   --color-violet: #192b3f;
   --color-sandy: #c9b8a8;
   --color-blue: #3d5876;
   --color-primary: var(--color-violet);
   --color-primary-hover: #2e4055;
   --color-primary-active: #3b536d;
+  --color-primary-transparent: #{rgba(#192b3f, 0.8)};
 }
 
 html {
