@@ -1,17 +1,24 @@
 :root {
   --color-white: #ffffff;
   --color-black: #000000;
+  --color-gray: #8a94a6;
+  --color-gray-light: #e1e6ed;
+  --color-violet: #192b3f;
+  --color-sandy: #c9b8a8;
+  --color-blue: #3d5876;
+  --color-primary: var(--color-violet);
 }
 
 html {
   min-height: 100vh;
   scroll-behavior: smooth;
-  font-family: $font-primary;
+  font: 500 16px/1.5 $font-primary;
 }
 
 body {
   min-width: $width-mobile;
-  color: var(--color-black);
+  margin: 0;
+  color: var(--color-primary);
   text-size-adjust: 100%;
   background-color: var(--color-white);
   -webkit-tap-highlight-color: transparent;
