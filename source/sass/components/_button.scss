@@ -1,0 +1,29 @@
+.button {
+  display: block;
+  width: 100%;
+  min-height: 56px;
+  padding: 0 12px;
+  font: inherit;
+  font-size: 24px;
+  line-height: 32px;
+  text-align: center;
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.4s;
+  appearance: none;
+
+  &:hover,
+  &:focus {
+    background-color: var(--color-primary-hover);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    background-color: var(--color-primary-active);
+  }
+}

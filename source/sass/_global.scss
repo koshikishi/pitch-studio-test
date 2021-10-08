@@ -7,6 +7,8 @@
   --color-sandy: #c9b8a8;
   --color-blue: #3d5876;
   --color-primary: var(--color-violet);
+  --color-primary-hover: #2e4055;
+  --color-primary-active: #3b536d;
 }
 
 html {
@@ -55,4 +57,13 @@ input {
       appearance: none;
     }
   }
+}
+
+@mixin title-small() {
+  margin: 0;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-gray);
+  text-transform: uppercase;
 }

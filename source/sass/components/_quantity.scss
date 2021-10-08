@@ -1,0 +1,60 @@
+.quantity {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 84px;
+
+  .no-js & {
+    justify-content: center;
+  }
+}
+
+.quantity__button {
+  box-sizing: border-box;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: border-color 0.4s;
+  appearance: none;
+
+  &--decrease {
+    background: url("../img/minus.svg") center / 16px no-repeat;
+  }
+
+  &--increase {
+    background: url("../img/plus.svg") center / 16px no-repeat;
+  }
+
+  .no-js & {
+    display: none;
+  }
+
+  &:hover,
+  &:focus {
+    border-color: var(--color-gray-light);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.quantity__input {
+  width: 2ch;
+  padding: 0;
+  font-size: 24px;
+  line-height: 1;
+  text-align: center;
+  color: var(--color-gray);
+  background: none;
+  border: none;
+  appearance: none;
+
+  &:focus {
+    outline: none;
+  }
+}
