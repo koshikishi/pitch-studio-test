@@ -3,7 +3,8 @@
   background-color: var(--color-sandy);
 
   @include media-min($width-desktop) {
-    height: 768px;
+    height: 100vh;
+    max-height: 768px;
   }
 }
 
@@ -66,7 +67,7 @@
   }
 
   @include media-min($width-desktop) {
-    padding: 125px 52px 92px;
+    padding: 125px 40px 92px 52px;
   }
 }
 
