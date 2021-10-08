@@ -1,0 +1,12 @@
+div.sizes
+  div.sizes__list
+    each size in data.product.sizes
+      - const sizeID = `product_size_${size.name}`;
+
+      div.sizes__size
+        input(id=sizeID type="radio" name="product_size" value=size.name title=size.description aria-label=size.description checked=size.isChecked || false disabled=size.isDisabled || false)
+        label(for=sizeID)
+          | #{size.name.toUpperCase()}
+
+  a.sizes__link(href="#")
+    | Size guide

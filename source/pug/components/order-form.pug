@@ -1,0 +1,28 @@
+form.order-form#order_form(action="#" method="post")
+  fieldset.order-form__fieldset
+    legend.order-form__title
+      | Colour
+
+    div.order-form__colors
+      include colors
+
+  fieldset.order-form__fieldset
+    legend.order-form__title
+      | Size
+
+    div.order-form__sizes
+      include sizes
+
+  fieldset.order-form__fieldset
+    legend.order-form__title
+      | Quantity
+
+    div.order-form__quantity
+      include quantity
+
+  fieldset.order-form__fieldset
+    legend.order-form__title
+      | Cost
+
+    p.order-form__cost
+      | #[span.order-form__cost-integer $120]#[span.order-form__cost-fraction .00]

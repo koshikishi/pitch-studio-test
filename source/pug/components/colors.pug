@@ -1,0 +1,11 @@
+div.colors
+  each color in data.product.colors
+    -
+      const colorID = `product_color_${color.name}`;
+      const colorLabel = `${color.name[0].toUpperCase() + color.name.slice(1)} color`;
+
+    div.colors__color(class=`colors__color--${color.name}`)
+      input(id=colorID type="radio" name="product_color" value=color.name title=colorLabel checked=color.isChecked || false)
+      label(for=colorID)
+        span.visually-hidden
+          | #{colorLabel}

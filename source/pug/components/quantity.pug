@@ -1,0 +1,10 @@
+div.quantity
+  button.quantity__button.quantity__button--decrease(type="button" name="product_quantity_decrease" title="Decrease quantity")
+    span.visually-hidden
+      | Decrease product quantity
+
+  input.quantity__input(type="number" name="product_quantity" value="1" min="1" max="99" title="Product quantity" aria-label="Product quantity")
+
+  button.quantity__button.quantity__button--increase(type="button" name="product_quantity_increase" title="Increase quantity")
+    span.visually-hidden
+      | Increase product quantity
