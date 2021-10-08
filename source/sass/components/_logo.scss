@@ -1,0 +1,16 @@
+.logo {
+  display: inline-block;
+
+  img {
+    display: inline-block;
+    width: 65px;
+    height: 36px;
+  }
+
+  @include media-min($width-desktop) {
+    img {
+      width: 94px;
+      height: 53px;
+    }
+  }
+}
