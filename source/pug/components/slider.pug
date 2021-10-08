@@ -20,9 +20,9 @@ section.slider
 
     div.slider__control
       div.slider__buttons
-        buddon.slider__button.slider__button--prev(type="button" title="Previous slide")
+        button.slider__button.slider__button--prev(type="button" title="Previous slide" aria-label="Previous slide")
           +svg('arrow', 32, 32)(role="img")
-        buddon.slider__button.slider__button--next(type="button" title="Next slide")
+        button.slider__button.slider__button--next(type="button" title="Next slide" aria-label="Next slide")
           +svg('arrow', 32, 32)(role="img")
 
       div.slider__pagination
