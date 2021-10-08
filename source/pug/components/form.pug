@@ -1,0 +1,32 @@
+form.form(action="#" method="post")
+  div.form__wrapper
+    div.form__field
+      div.form__input
+        input(type="text" name="user_name" placeholder="Enter your name" aria-label="Enter your name" required)
+    div.form__field
+      div.form__input
+        input(type="email" name="user_email" placeholder="Enter your e-mail" aria-label="Enter your e-mail" required)
+
+    div.form__gender
+      p.form__text
+        | Choose your gender:
+
+      div.form__radios
+        div.form__radio
+          input#user_gender_male(type="radio" name="user_gender" value="male" checked)
+          label(for="user_gender_male")
+            | Male
+
+        div.form__radio
+          input#user_gender_female(type="radio" name="user_gender" value="female")
+          label(for="user_gender_female")
+            | Female
+
+    div.form__field
+      div.form__checkbox
+        input#user_check(type="checkbox" name="user_check" checked)
+        label(for="user_check")
+          | Look out for its standout party dresses, feminine details
+
+  button.button(type="submit")
+    | Subscribe Gussi
