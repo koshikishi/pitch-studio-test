@@ -1,0 +1,32 @@
+section.slider
+  h2.visually-hidden
+    | Featured products
+
+  div.slider__wrapper
+    header.slider__header
+      a.logo
+        img(src="img/logo.svg" alt="Pitch Studio Test Logo" width="65" height="36")
+
+    ul.slider__list
+      each slide in data.slider
+        li.slider__slide(class=slide.isActive ? 'slider__slide--active' : null)
+          +picture(slide.fileName, slide.title, 320, 600, ['webp', 'jpg'], {classList: 'slider__slide-image'})
+
+          div.slider__slide-content
+            h3.slider__slide-title
+              | #{slide.title}
+            p.slider__slide-text
+              | #{slide.text}
+
+    div.slider__control
+      div.slider__buttons
+        buddon.slider__button.slider__button--prev(type="button" title="Previous slide")
+          +svg('arrow', 32, 32)(role="img")
+        buddon.slider__button.slider__button--next(type="button" title="Next slide")
+          +svg('arrow', 32, 32)(role="img")
+
+      div.slider__pagination
+        span.slider__pagination-current
+          | 01
+        span.slider__pagination-total
+          | 03
