@@ -1,0 +1,9 @@
+div.collection
+  a.collection__link(href="#")
+    +picture(collection.fileName, collection.title, 288, 160, ['webp', 'jpg'], {classList: 'collection__image'})
+
+    div.collection__content
+      h3.collection__title
+        | #{collection.title}
+      p.collection__text
+        | #{collection.text}
