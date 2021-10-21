@@ -25,12 +25,11 @@ section.product
     button.product__button.button(type="submit" form="order_form")
       | Order now
 
-    dl.product__delivery
+    div.product__delivery
       div.product__delivery-term
-        dt
-          button.product__delivery-button(type="button")
-            | Delivery
-        dd
+        button.product__delivery-button(type="button")
+          | Delivery
+        div.product__delivery-text
           p
             | Delivered on or before Monday, 25 February 2019#[br]
             | Note: Subject to placing your order before specific cut-off times. Details available in checkout.
@@ -38,10 +37,9 @@ section.product
             | For free delivery – spend over #[b £18.08]
 
       div.product__delivery-term
-        dt
-          button.product__delivery-button(type="button")
-            | Return
-        dd
+        button.product__delivery-button(type="button")
+          | Return
+        div.product__delivery-text
           p
             | Return through your local Boxberry store available in over 2,300 locations.#[br]
             | You can create your return on the carrier website by clicking the create return link.#[br]
