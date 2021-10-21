@@ -1,10 +1,5 @@
 .main__wrapper {
-  max-width: 600px;
   margin: 0 auto;
-
-  @include media-min($width-tablet) {
-    max-width: 1000px;
-  }
 
   @include media-min($width-desktop) {
     position: relative;
